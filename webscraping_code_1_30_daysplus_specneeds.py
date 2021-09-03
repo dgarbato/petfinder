@@ -187,7 +187,7 @@ for index, page_url in enumerate(page_urls):
 				
 				#indicating things unique to this file
 				cat_dict['days_on_petfinder'] = '30+'
-				cat_dict['special_needs'] = 'No'
+				cat_dict['special_needs'] = 'Yes'
 				
 				print(cat_dict)
 				
