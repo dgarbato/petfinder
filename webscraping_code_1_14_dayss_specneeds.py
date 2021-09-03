@@ -14,7 +14,7 @@ driver=webdriver.Chrome(r'C:\Users\dgarb\OneDrive\Documents\Data Science Bootcam
 
 #get number of pages from first page
 
-first_page =r'https://www.petfinder.com/search/cats-for-adoption/us/ny/new-york-city/?attribute%5B0%5D=House+trained&days_on_petfinder=14&distance=25&include_transportable=0'
+first_page =r'https://www.petfinder.com/search/cats-for-adoption/us/ny/new-york-city/?attribute%5B0%5D=Special+needs&days_on_petfinder=14&distance=25&include_transportable=0'
 driver.get(first_page)
 time.sleep(2)
 
@@ -46,7 +46,7 @@ failed_urls= []
 
 for index, page_url in enumerate(page_urls):
 
-	csv_file = open('petfinder_14_day_housetrained.csv','w',encoding= 'utf-8',newline='')
+	csv_file = open('petfinder_14_day_specneeds.csv','w',encoding= 'utf-8',newline='')
 	writer=csv.writer(csv_file)
 
 	try:
@@ -187,7 +187,7 @@ for index, page_url in enumerate(page_urls):
 				
 				#indicating things unique to this file
 				cat_dict['days_on_petfinder'] = '14'
-				cat_dict['special_needs'] = 'No'
+				cat_dict['special_needs'] = 'Yes'
 				
 				print(cat_dict)
 				
