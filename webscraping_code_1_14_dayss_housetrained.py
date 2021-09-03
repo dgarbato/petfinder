@@ -14,7 +14,7 @@ driver=webdriver.Chrome(r'C:\Users\dgarb\OneDrive\Documents\Data Science Bootcam
 
 #get number of pages from first page
 
-first_page =r'https://www.petfinder.com/search/cats-for-adoption/us/ny/new-york-city/?attribute%5B0%5D=Special+needs&days_on_petfinder=30&distance=25'
+first_page =r'https://www.petfinder.com/search/cats-for-adoption/us/ny/new-york-city/?attribute%5B0%5D=House+trained&days_on_petfinder=14&distance=25'
 driver.get(first_page)
 time.sleep(2)
 
@@ -186,8 +186,8 @@ for index, page_url in enumerate(page_urls):
 				cat_dict['rescue_group'] = rescue_group
 				
 				#indicating things unique to this file
-				cat_dict['days_on_petfinder'] = '30+'
-				cat_dict['special_needs'] = 'Yes'
+				cat_dict['days_on_petfinder'] = '14'
+				cat_dict['special_needs'] = 'No'
 				
 				print(cat_dict)
 				
