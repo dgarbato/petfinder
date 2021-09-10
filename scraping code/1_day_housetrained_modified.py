@@ -14,21 +14,25 @@ driver=webdriver.Chrome(r'C:\Users\dgarb\OneDrive\Documents\Data Science Bootcam
 
 #get number of pages from first page
 
-first_page =r'https://www.petfinder.com/search/cats-for-adoption/us/ny/new-york-city/?attribute%5B0%5D=House+trained&days_on_petfinder=14&distance=25&include_transportable=0'
+first_page =r'https://www.petfinder.com/search/cats-for-adoption/us/ny/new-york-city/?attribute%5B0%5D=House+trained&days_on_petfinder=1&distance=25&include_transportable=0'
 driver.get(first_page)
+
+csv_file = open('reviews.csv', 'w', encoding='utf-8', newline='')
+writer = csv.writer(csv_file)
+
 time.sleep(2)
 
 #find number of pages
 
-page_info = driver.find_element_by_xpath('//*[@id="page-select_List_Box_Btn"]/div/div[1]').text
-print('page_info: ',page_info)
-pages = re.findall('[0-9]+',page_info)
-print('pages ',pages)
+# page_info = driver.find_element_by_xpath('//*[@id="page-select_List_Box_Btn"]/div/div[1]').text
+# print('page_info: ',page_info)
+# pages = re.findall('[0-9]+',page_info)
+# print('pages ',pages)
 
-#find start and end page
+# #find start and end page
 
-start_page = int(pages[0])
-end_page = int(pages[1])
+start_page = 1
+end_page = 1
 print('start_page: ',start_page,'*****','end_page: ',end_page)
 
 #create list of page urls
@@ -46,8 +50,8 @@ failed_urls= []
 
 for index, page_url in enumerate(page_urls):
 
-	csv_file = open('petfinder_14_day_housetrained.csv','w',encoding= 'utf-8',newline='')
-	writer=csv.writer(csv_file)
+	#csv_file = open('petfinder_1_day_housetrained.csv','w',encoding= 'utf-8',newline='')
+	#writer=csv.writer(csv_file)
 
 	try:
 		driver.get(page_url)
@@ -186,7 +190,7 @@ for index, page_url in enumerate(page_urls):
 				cat_dict['rescue_group'] = rescue_group
 				
 				#indicating things unique to this file
-				cat_dict['days_on_petfinder'] = '14'
+				cat_dict['days_on_petfinder'] = '1'
 				cat_dict['special_needs'] = 'No'
 				
 				print(cat_dict)
