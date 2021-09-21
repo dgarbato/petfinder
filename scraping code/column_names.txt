@@ -1,0 +1,1 @@
+cat_name, num_images, num_videos, age, breed, color, size, sex, characteristics, blank_coat_length, house_trained, health, good_in_a_home_with,	adoption_fee, prefers_a_home_without, coat_length, pet_story_num_words,	rescue_group, days_on_petfinder, special_needs
